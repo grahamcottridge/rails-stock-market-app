@@ -1,10 +1,14 @@
 <div class="container">
-  <h1>Stocker</h1>
-  <p>Hello world!</p>
+  <h1>Stock Market Price Watch</h1>
+  <hr/>
   <%= form_tag root_path, :method => 'POST' do %>
     <%= text_field_tag 'id', nil, placeholder: "Enter Company Ticker Symbol", size: 50 %>
-    <%= submit_tag 'submit' %>
+    <%= submit_tag 'Current Stock Price' %>
   <% end %>
+  <hr/>
+
+  <% stock = StockQuote::Stock.quote("goog") %>
+
+  <%= stock.company_name %>
 </div>
 
-<% stock = StockQuote::Stock.quote("goog") %>
