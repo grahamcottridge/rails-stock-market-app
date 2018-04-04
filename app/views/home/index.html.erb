@@ -3,13 +3,26 @@
   <hr/>
   <%= form_tag root_path, :method => 'POST' do %>
     <%= text_field_tag 'id', nil, placeholder: "Enter Company Ticker Symbol", size: 50 %>
-    <%= submit_tag 'Current Stock Price' %>
+    <%= submit_tag 'Current Stock Information' %>
   <% end %>
   <hr/>
 
   <% if @stock %>
-    <%= @stock.inspect %>
+    <strong>Company Name: </strong><%= @stock.company_name %> - <%= @stock.symbol %><br/>
+    <strong>Latest Price: </strong><%= @stock.latest_price %><br/>
+    <strong>Price/Earning Ratio: </strong><%= @stock.pe_ratio %><br/>
+    <strong>Market Cap: </strong><%= @stock.market_cap %><br/>
+    <strong>Previous Close: </strong><%= @stock.previous_close %><br/>
+    <strong>Stock Open: </strong><%= @stock.open %><br/>
+    <strong>Year High: </strong><%= @stock.week52_high %><br/>
+    <strong>Year Low: </strong><%= @stock.week52_low %><br/>
   <% elsif @noentry %>
     <%= @noentry %>
   <% end %>
 </div>
+
+<!--
+<%= @stock.inspect %>
+ -->
+
+
