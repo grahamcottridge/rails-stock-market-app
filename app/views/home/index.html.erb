@@ -7,8 +7,9 @@
   <% end %>
   <hr/>
 
-  <% stock = StockQuote::Stock.quote("goog") %>
-
-  <%= stock.company_name %>
+  <% if @stock %>
+    <%= @stock.inspect %>
+  <% elsif @noentry %>
+    <%= @noentry %>
+  <% end %>
 </div>
-
