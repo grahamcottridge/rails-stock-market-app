@@ -16,6 +16,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'stock_quote', '~> 2.0'
+gem 'devise', '~> 4.4', '>= 4.4.3'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
