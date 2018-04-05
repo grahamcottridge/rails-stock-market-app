@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'stock_quote', '~> 2.0'
 gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'devise-bootstrapped'
 
 
 group :development do
