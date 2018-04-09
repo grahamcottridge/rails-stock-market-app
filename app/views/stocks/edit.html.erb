@@ -1,6 +1,14 @@
-<h1>Editing Stock</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h3 class="text-center">Edit Stock</h3>
+      <hr/>
 
-<%= render 'form', stock: @stock %>
+      <%= render 'form', stock: @stock %>
+      <hr/>
 
-<%= link_to 'Show', @stock %> |
-<%= link_to 'Back', stocks_path %>
+      <%= link_to 'Show', @stock, class: "btn btn-warning btn-sm" %>
+      <%= link_to 'Back', stocks_path, class: "btn btn-success btn-sm" %>
+    </div>
+  </div>
+</div>

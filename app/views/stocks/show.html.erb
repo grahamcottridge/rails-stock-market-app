@@ -1,12 +1,26 @@
-<p>
-  <strong>Ticker:</strong>
-  <%= @stock.ticker %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <% begin %>
+      <% @stock_quote = StockQuote::Stock.quote(@stock.ticker) %>
+      <% rescue StandardError %>
+      <% end %>
+      <h3 class="text-center"><%= @stock_quote.company_name %></h3>
+      <hr/>
 
-<p>
-  <strong>User:</strong>
-  <%= @stock.user_id %>
-</p>
+      <strong>Ticker: </strong><%= @stock_quote.symbol %><br/>
+      <strong>Latest Price: </strong><%= @stock_quote.latest_price %><br/>
+      <strong>Price/Earning Ratio: </strong><%= @stock_quote.pe_ratio %><br/>
+      <strong>Market Cap: </strong><%= @stock_quote.market_cap %><br/>
+      <strong>Previous Close: </strong><%= @stock_quote.previous_close %><br/>
+      <strong>Stock Open: </strong><%= @stock_quote.open %><br/>
+      <strong>Year High: </strong><%= @stock_quote.week52_high %><br/>
+      <strong>Year Low: </strong><%= @stock_quote.week52_low %><br/>
+      <hr/>
 
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
-<%= link_to 'Back', stocks_path %>
+      <%= link_to 'Edit', edit_stock_path(@stock), class: "btn btn-primary btn-sm" %>
+      <%= link_to 'Delete', stock_path(@stock), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+      <%= link_to 'Back', stocks_path, class: "btn btn-success btn-sm" %>
+    </div>
+  </div>
+</div>

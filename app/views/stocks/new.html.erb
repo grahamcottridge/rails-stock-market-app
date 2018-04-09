@@ -1,5 +1,11 @@
-<h1>New Stock</h1>
-
-<%= render 'form', stock: @stock %>
-
-<%= link_to 'Back', stocks_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h3 class="text-center">New Stock</h3>
+      <hr/>
+      <%= render 'form', stock: @stock %>
+      <hr/>
+      <%= link_to 'Back', stocks_path, class: "btn btn-success btn-sm" %>
+    </div>
+  </div>
+</div>
