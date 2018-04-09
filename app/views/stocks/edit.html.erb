@@ -3,12 +3,12 @@
     <div class="col-sm-4 col-sm-offset-4">
       <h3 class="text-center">Edit Stock</h3>
       <hr/>
-
       <%= render 'form', stock: @stock %>
       <hr/>
-
-      <%= link_to 'Show', @stock, class: "btn btn-warning btn-sm" %>
-      <%= link_to 'Back', stocks_path, class: "btn btn-success btn-sm" %>
+<!--
+      <%= link_to 'Show', @stock, class: "btn btn-success btn-block" %>
+ -->
+      <div class="text-center"><%= link_to 'Back', stocks_path %></div>
     </div>
   </div>
 </div>

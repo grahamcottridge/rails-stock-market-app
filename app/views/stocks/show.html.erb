@@ -7,6 +7,7 @@
       <% end %>
       <h3 class="text-center"><%= @stock_quote.company_name %></h3>
       <hr/>
+      <div class="text-center">
 
       <strong>Ticker: </strong><%= @stock_quote.symbol %><br/>
       <strong>Latest Price: </strong><%= @stock_quote.latest_price %><br/>
@@ -18,9 +19,12 @@
       <strong>Year Low: </strong><%= @stock_quote.week52_low %><br/>
       <hr/>
 
-      <%= link_to 'Edit', edit_stock_path(@stock), class: "btn btn-primary btn-sm" %>
-      <%= link_to 'Delete', stock_path(@stock), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
-      <%= link_to 'Back', stocks_path, class: "btn btn-success btn-sm" %>
+
+      <%= link_to 'Edit', edit_stock_path(@stock), class: "btn btn-primary btn-block" %>
+      <%= link_to 'Delete', stock_path(@stock), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-block" %>
+      <br>
+      <%= link_to 'Back', stocks_path %>
+      </div>
     </div>
   </div>
 </div>
