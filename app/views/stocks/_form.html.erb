@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :ticker, class: 'form-control' %>
+    <%= f.input :ticker, placeholder: "Enter Company Ticker Symbol", size: 20, class: 'form-control' %>
     <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
 

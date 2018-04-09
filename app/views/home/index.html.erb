@@ -1,8 +1,12 @@
+
+<div id="background"></div>
 <div class="container">
+
   <div class="row">
+    <h2 class="text-center">Stock Market Price Watch</h2>
     <div class="col-sm-4 col-sm-offset-4">
-      <h2 class="text-center">Stock Market Price Watch</h2>
-      <hr/>
+      <!-- <h2 class="text-center">Stock Market Price Watch</h2> -->
+      <br>
 
       <div class="form-group">
         <%= form_tag root_path, :method => 'POST' do %>
@@ -13,14 +17,15 @@
         <%= submit_tag 'Current Stock Information', class: 'btn btn-primary btn-block' %>
       </div>
       <% end %>
-      <hr/>
+      <br>
 
       <% if @stock %>
+      <div class="text-center">
 
-      <strong>Company Name: </strong><%= @stock.company_name %> - <%= @stock.symbol %><br/>
+      <strong>Company Name: </strong><%= @stock.company_name %><br/>
       <strong>Latest Price: </strong><%= @stock.latest_price %><br/>
-      <strong>Price/Earning Ratio: </strong><%= @stock.pe_ratio %><br/>
-      <strong>Market Cap: </strong><%= @stock.market_cap %><br/>
+      <strong>P/E Ratio: </strong><%= @stock.pe_ratio %><br/>
+      <strong>Market Cap: </strong><%= @stock.market_cap / 1000000000 %> bn<br/>
       <strong>Previous Close: </strong><%= @stock.previous_close %><br/>
       <strong>Stock Open: </strong><%= @stock.open %><br/>
       <strong>Year High: </strong><%= @stock.week52_high %><br/>
@@ -32,6 +37,7 @@
       <% if @error %>
         <%= @error %>
         <% end %>
+        </div>
     </div>
   </div>
 </div>

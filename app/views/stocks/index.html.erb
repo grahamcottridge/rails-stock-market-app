@@ -1,9 +1,10 @@
+<div id="background"></div>
 <div class="container">
 
-<h3 class="text-center">Stocks</h3>
-<hr>
+<h3 class="text-center">Stock Listing</h3>
+<br>
 
-<table class="table table-striped table-hover">
+<table class="table">
   <thead>
     <tr>
       <th>Company Name</th>
@@ -24,16 +25,16 @@
       <tr>
         <td><%= link_to @stock_quote.company_name, stock %></td>
         <td><%= stock.ticker %></td>
-        <td><%= @stock_quote.latest_price %></td>
-        <td><%= @stock_quote.market_cap %></td>
+        <td>US$ <%= @stock_quote.latest_price %></td>
+        <td>US$ <%= @stock_quote.market_cap  / 1000000000 %> bn</td>
       </tr>
       <% end %>
     <% end %>
   </tbody>
 </table>
 
-<hr>
+<br>
 
-<%= link_to 'New Stock', new_stock_path, class: "btn btn-primary" %>
+<%= link_to 'Add Stock', new_stock_path, class: "btn btn-primary" %>
 
 </div>
